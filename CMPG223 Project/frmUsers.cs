@@ -323,6 +323,8 @@ namespace CMPG223_Project
             {
                 cmbUsername_DeleteUsers.Items.Add(reader["Username"]);
             }
+
+            MessageBox.Show("User deleted successfully");
             reader.Close();
             conn.Close();
 
