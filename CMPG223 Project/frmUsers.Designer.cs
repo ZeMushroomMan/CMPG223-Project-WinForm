@@ -326,8 +326,10 @@
             dgvUpdateUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUpdateUsers.Location = new Point(538, 29);
             dgvUpdateUsers.Margin = new Padding(3, 4, 3, 4);
+            dgvUpdateUsers.MultiSelect = false;
             dgvUpdateUsers.Name = "dgvUpdateUsers";
             dgvUpdateUsers.RowHeadersWidth = 51;
+            dgvUpdateUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUpdateUsers.Size = new Size(499, 250);
             dgvUpdateUsers.TabIndex = 12;
             // 

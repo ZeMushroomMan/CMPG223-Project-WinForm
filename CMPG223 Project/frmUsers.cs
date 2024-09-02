@@ -42,6 +42,8 @@ namespace CMPG223_Project
 
             // Set the TextBox to read-only
             txtUserID_UpdateUser.ReadOnly = true;
+
+            dgvUpdateUsers.SelectionChanged += dgvUpdateUsers_SelectionChanged;
         }
 
         private void dgvUpdateUsers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -258,9 +260,20 @@ namespace CMPG223_Project
 
         private void dgvUpdateUsers_SelectionChanged(object sender, EventArgs e)
         {
-            ///////////
-        }
+            // Check if any row is selected
+            if (dgvUpdateUsers.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = dgvUpdateUsers.SelectedRows[0];
 
+                // Populate the textboxes with the data from the selected row
+                txtUserID_UpdateUser.Text = selectedRow.Cells["User_ID"].Value.ToString();
+                txtUsername_UpdateUsers.Text = selectedRow.Cells["Username"].Value.ToString();
+                txtFirstName_UpdateUsers.Text = selectedRow.Cells["FirstName"].Value.ToString();
+                txtLastName_UpdateUsers.Text = selectedRow.Cells["Lastname"].Value.ToString();
+                txtCellNumber_UpdateUsers.Text = selectedRow.Cells["Cellnumber"].Value.ToString();
+            }
+        }
 
         private void btnClear_AddUsers_Click(object sender, EventArgs e)
         {
